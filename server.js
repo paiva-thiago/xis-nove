@@ -13,8 +13,9 @@ app.get("/", function (req, res) {
 
 
 app.get("/api/whoami", function (req, res) {
-  //let ip = requestIp.getClientIp(req)
+  const TRAMPO = "189.125.180.102"
   let ip = req.headers['x-forwarded-for']
+  let atWork = ip == TRAMPO
   if(ip!=undefined){
     ip = ip.split(',')[0]
   }else{
@@ -22,7 +23,7 @@ app.get("/api/whoami", function (req, res) {
   }
   let lang = req.headers['accept-language']
   let nav = req.headers['user-agent']
-  res.json({ipaddress: ip,language:lang,software:nav});
+  res.json({ipaddress: ip,acessandoNoTrabalho:atWork,language:lang,software:nav});
 });
 
 
