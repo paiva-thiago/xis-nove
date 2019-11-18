@@ -4,8 +4,7 @@
 	"description": "API project for freeCodeCamp",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js",
-		"build": "echo hi"
+		"start": "node server.js"
 	},
 	"dependencies": {
 		"cors": "^2.8.1",
